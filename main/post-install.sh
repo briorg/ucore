@@ -16,6 +16,11 @@ if [[ "-nvidia" == "${NVIDIA_TAG}" ]]; then
     systemctl enable ublue-nvctk-cdi.service
 fi
 
+mkdir -p /etc/cloud/cloud.cfg.d
+tee /etc/cloud/cloud.cfg.d/99_pve.cfg <<'EOF'
+# /etc/cloud/cloud.cfg.d/99_pve.cfg
+datasource_list: [ NoCloud, ConfigDrive ]
+EOF
 
 ## ALWAYS: regular post-install
 systemctl disable docker.socket
