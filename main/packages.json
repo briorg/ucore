@@ -2,6 +2,7 @@
     "all": {
         "include": {
             "all": [
+                "cloud-init",
                 "cockpit-networkmanager",
                 "cockpit-podman",
                 "cockpit-selinux",
