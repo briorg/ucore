@@ -1,7 +1,11 @@
 name: build-ucore
 on:
+  push:
+    branches: ["live"]
   pull_request:
+    branches: ["live"]
   merge_group:
+    branches: ["live"]
   schedule:
     - cron: '45 23 * * *' # 11:45PM UTC everyday (approx 1.5 hours after coreos images publish)
   workflow_dispatch:
